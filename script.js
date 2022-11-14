@@ -1,4 +1,4 @@
-////////////  arrows func
+////////////  3 arrows func 
 
 let dainos = ['Angels World', 'Pukuciu', 'Fine', 'Another dimension', 'This cannot continue']
 console.log(dainos)
@@ -28,7 +28,65 @@ dainos.forEach((item, index)=>{ // local kintamasis, local variable
     console.log(index+1, item) // pradedam nuo vieneto skaiciuot
 })
 
-///////////////////////////////
+/////////////////////////////// 2nd  
+
+let f_name = "Angel";
+let salary = 1000000000000;
+
+function yearSalary(kas, alga){
+    let suma = alga * 12;
+
+console.log(`Person - ${kas} . Your yearly income is ${suma}`)
+}
+
+yearSalary(f_name, salary)
+
+// ~~~~~~~~~~~~~///
+
+function pasisveikinimas(a) {
+    console.log("labutis "+a);
+}
+
+pasisveikinimas (f_name); 
+
+// ~~~~~~~ //
+
+let price = 1.11;
+let quantity = 1;
+
+function skaiciavimai(kiekio, kainu){
+    let moketina_suma = kiekio * kainu;
+    return moketina_suma;
+    }
+console.log(skaiciavimai(quantity, price));
+
+// ~~~~~~~ //global
+
+function pasisveikinimas() {
+    console.log(f_name);
+}
+pasisveikinimas();
+
+// ~~~~~ //local
+
+function labas(){
+    let vardas = "YourName";
+}
+labas();
+    //console.log(vardas);
+
+
+    //~~~//
+
+
+function auto(){
+    let carName = "Mercedess";
+    return carName;
+}
+console.log(auto());
+
+///////`~~~~~~~~~~~~~~~~/.//////////// 1st 
+///
 
 let fname = " Angel";
 let role = " Chill";
