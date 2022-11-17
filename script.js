@@ -167,6 +167,89 @@ switch (pazymys) {
     // ~~~~~~~~~~~~~~~~~~~~~new~~~~~~~~~~~~~~~~~~~~
 
 
+//paleva diena...
+
+//isimti  pasikartojancius daitus is saraso
+let daigtai = ['kamuolys', 'saltibarsciai', 'bubblegum', 'puodukas', 'telefonas', 'rankenukas', 'kamuolys', 'saltibarsciai', 'ausines']
+console.log(daigtai);
+
+let atrinkti = []
+daigtai.map(item => {
+    if (atrinkti.indexOf(item) === -1 ) {   
+    atrinkti.push(item);  }
+    });
+
+console.log(atrinkti);
+
+//masyvai
+let savaites_dienos = ["pirmadienis", "antradienis", "treciadienis", "ketvirtadienis"]
+console.log(savaites_dienos)
+console.log(`savaites_dienos ilgis ${savaites_dienos.length}`);
+
+
+//naujas narys gale
+savaites_dienos.push("penktadienis"); //
+console.log('pakeistas masyvas ${savaites_dienos}');
+
+
+//filter method
+let atrinkta_diena = savaites_dienos.filter( diena => diena == "penktadienis");
+console.log(atrinkta_diena);
+
+
+//dvieju dimensiju masyvai
+let klasiokai = [
+  ["Jolita", "JS20", 100, 8.9], 
+  ["Tomas", "JS22", 28, 9.5],
+];
+console.log(klasiokai[0][3]);
+
+//objektai
+let zmogus = {
+  vardas: "Jolita",
+  grupe: "JS20",
+  amzius: 100,
+  vidurkis: 8.9
+}
+console.log(zmogus.vardas);
+
+//kompleksine duomenu struktura masyve objektai
+let mokiniai =[
+  {
+  vardas: "Jolita",
+  grupe: "JS20",
+  amzius: 100,
+  vidurkis: 8.9
+  },
+  {
+  vardas: "Tomas",
+  grupe: "JS22",
+  amzius: 28,
+  vidurkis: 9.5
+  },
+  
+]
+console.log(mokiniai[1].vardas);
+
+
+//loopinimo metodai, iteravivas
+console.log("foreach'inu masyva: ");
+savaites_dienos.forEach(
+    (gabaliukas, index)=>{
+        console.log(`foreach'inu masyva: ${index+1} ${gabaliukas} `);
+    }
+);
+
+mokiniai.forEach((item)=>{
+    console.log(item.vardas)
+});
+
+
+
+//paleva diena baigti...
+
+
+
 
 
 
