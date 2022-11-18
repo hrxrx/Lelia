@@ -1,3 +1,151 @@
+let opinion = ['miau', 'au', 'cyp', 'moo', 'yhaha'];
+
+for(let thought of opinion) {
+    console.log(opinion)
+}
+
+for(let i=0; i<opinion.length; i++){
+    console.log(` Their opinion on life satisfaction is 
+    ${opinion[i]}`);
+}
+
+
+let film = {
+    tittle: "I want to stuff my heart with moss",
+    metai: "2022",
+    duration: "1800",
+    genre: "thriller",
+    subgenre: {
+      1:"art", 
+      2:"drama", 
+      3:"reality show"}
+  }
+  for(let savybe in film){
+   //console.log(savybe)
+    //console.log(film[savybe])
+    //console.log(typeof film[savybe]);
+  
+    if(typeof film[savybe] !== "object"){
+      //console.log(savybe  + " : " +film[savybe]);
+    } else{
+      //console.log(savybe + " yra -> vardinu: ")
+       for(let antras in film[savybe]){
+         
+        //console.log(antras+ " yra " + film[savybe][antras]);
+      }
+    }
+  }
+
+
+  let kursai = [
+      {
+          pavadinimas: "JS",
+          aprasymas: "Labai lengva programavimo kalba",
+          lektorie: "Jolita",
+          kaina: 200,
+          tag: ["js", "programming", "web"]
+      },
+      {
+          pavadinimas: "SQL",
+          aprasymas: "Labai strukturizuota programavimo kalba",
+          lektorie: "Dovydas",
+          kaina: 100,
+          tag: ["sql", "database", "it"]
+      },
+      {
+          pavadinimas: "HTML",
+          aprasymas: "Labai lengva programavimo kalba",
+          lektorie: "Zigmas",
+          kaina: 150,
+          tag: ["html", "markup", "webpages"]
+
+      },
+      {
+          pavadinimas: "Python",
+          aprasymas: "Labai zaisminga kalba",
+          lektorie: "Boska",
+          kaina: 180,
+          tag: ["phyton", "object", "opensource"]
+
+      },
+  ]
+  console.log (kursai)
+
+  for(let item of kursai){
+      console.log(item);
+      for(let second_loop in item){
+          console.log(second_loop);
+          console.log();
+          console.log(` Savybe: ${[]} Reiksme: ${[]}`);
+      }
+  }
+
+//for in
+
+let kurseliai = [
+    {
+        pavadinimas: "JS",
+        aprasymas: "Labai lengva programavimo kalba",
+        lektorie: "Jolita",
+        kaina: {
+            akcija: 200,
+            pilna: 300,
+            sutaupai: 100,
+        },
+        tag: ["js", "programming", "web"]
+    },
+    {
+        pavadinimas: "SQL",
+        aprasymas: "Labai strukturizuota programavimo kalba",
+        lektorie: "Dovydas",
+        kaina: {
+            akcija: 200,
+            pilna: 300,
+            sutaupai: 100,
+        },
+        tag: ["sql", "database", "it"]
+    },
+    {
+        pavadinimas: "HTML",
+        aprasymas: "Labai lengva programavimo kalba",
+        lektorie: "Zigmas",
+        kaina: {
+            akcija: 200,
+            pilna: 300,
+            sutaupai: 100,
+        },       
+        tag: ["html", "markup", "webpages"]
+
+    },
+    {
+        pavadinimas: "Python",
+        aprasymas: "Labai zaisminga kalba",
+        lektorie: "Boska",
+        kaina: {
+            akcija: 200,
+            pilna: 300,
+            sutaupai: 100,
+        },       
+        tag: ["phyton", "object", "opensource"]
+
+    },
+]
+
+
+
+  for(let i=0; i<kurseliai.length; i++){
+      //console.log(kurseliai[i]);
+      for(let item in kurseliai[i]){
+          console.log(item + " "+ [kurseliai][item]);
+      }
+  }
+
+  
+
+
+  
+
+
 ////////////  3 arrows func 
 
 let dainos = ['Angels World', 'Pukuciu', 'Fine', 'Another dimension', 'This cannot continue']
