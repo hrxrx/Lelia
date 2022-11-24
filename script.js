@@ -1,3 +1,77 @@
+import result from "./data.js";
+
+
+const informacija_is_local_storage = localStorage
+console.log(informacija_is_local_storage)
+
+
+  const katyte = localStorage.getItem("kate");
+  console.log(katyte)
+  const suniukas = localStorage.getItem("suo");
+  console.log(suniukas)
+  
+//irasyt i local storage
+const kate_info = {
+    vardas: "Angel",
+    kailis: "Baltas"
+}
+
+const suo_info = {
+    vardas: "Toris",
+    kailis: "Pilkas"
+}
+
+localStorage.setItem("kate",  JSON.stringify(kate_info))//paversti i string
+localStorage.setItem("suo", JSON.stringify(suo_info))
+const kate = JSON.parse(localStorage.getItem("kate")) //gaunu duomenis
+console.log(kate.kailis)
+const suo = JSON.parse(localStorage.getItem("suo")) //gaunu duomenis
+console.log(suo.kailis)
+
+
+
+//sukurti funkcionaluma,kuris tikrina,
+//ar local storage yra tokia reiksme'favourite movies'
+
+function tikrina() {
+    const kintamasis_tikrinimui = localStorage.getItem("favourite_movies")
+    console.log(kintamasis_tikrinimui);
+    if(kintamasis_tikrinimui == null){
+        return [];
+    } else { 
+        return JSON.parse(kintamasis_tikrinimui);
+    }
+}
+console.log(tikrina())
+
+///same but cool
+const items = (() => {
+    const fieldValue = localStorage.getItem('favourite_movies');
+    return fieldValue === null
+    ? []
+    : JSON.parse(fieldValue);
+  })();
+//
+
+console.log(result);
+
+//find. randa pati pirma ir stoja
+
+//   items.push({
+//       "favourite_movies": s.value,
+
+//   });
+
+//   localStorage.setItem('favourite_movies', JSON.stringify(items));
+
+//   console.log(JSON.parse(localStorage.getItem('favourite_movies')))
+
+  
+// console.log('favourite_movies')
+
+
+//
+
 let opinion = ['miau', 'au', 'cyp', 'moo', 'yhaha'];
 
 for(let thought of opinion) {
