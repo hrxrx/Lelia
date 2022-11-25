@@ -1,14 +1,16 @@
 import result from "./data.js";
 
+import result from "./data.js";
+
 
 const informacija_is_local_storage = localStorage
-console.log(informacija_is_local_storage)
+//console.log(informacija_is_local_storage)
 
 
   const katyte = localStorage.getItem("kate");
-  console.log(katyte)
+  //console.log(katyte)
   const suniukas = localStorage.getItem("suo");
-  console.log(suniukas)
+  //console.log(suniukas)
   
 //irasyt i local storage
 const kate_info = {
@@ -24,25 +26,31 @@ const suo_info = {
 localStorage.setItem("kate",  JSON.stringify(kate_info))//paversti i string
 localStorage.setItem("suo", JSON.stringify(suo_info))
 const kate = JSON.parse(localStorage.getItem("kate")) //gaunu duomenis
-console.log(kate.kailis)
+//console.log(kate.kailis)
 const suo = JSON.parse(localStorage.getItem("suo")) //gaunu duomenis
-console.log(suo.kailis)
+//console.log(suo.kailis)
 
+console.log('*******************');
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //sukurti funkcionaluma,kuris tikrina,
 //ar local storage yra tokia reiksme'favourite movies'
 
+//console.log(result);
+
+
 function tikrina() {
     const kintamasis_tikrinimui = localStorage.getItem("favourite_movies")
-    console.log(kintamasis_tikrinimui);
+    //console.log(kintamasis_tikrinimui);
     if(kintamasis_tikrinimui == null){
         return [];
     } else { 
         return JSON.parse(kintamasis_tikrinimui);
     }
 }
-console.log(tikrina())
+//console.log(tikrina())
+
 
 ///same but cool
 const items = (() => {
@@ -53,21 +61,76 @@ const items = (() => {
   })();
 //
 
-console.log(result);
+////find. randa pati pirma ir stoja
+function getMovieFromFile(movieId) {
+    const favourite_movies = result.find(movie => movieId === movieId)
+    return favourite_movies;
+}
+//console.log(getMovieFromFile(284054));
 
-//find. randa pati pirma ir stoja
 
-//   items.push({
-//       "favourite_movies": s.value,
 
-//   });
+// function tikrina() {
+//     const kintamasis_tikrinimui = localStorage.getItem("favourite_movies")
+//     console.log(kintamasis_tikrinimui);
+//     if(kintamasis_tikrinimui == null) {
+//          return [];
+//     } else { 
+//         return JSON.parse(kintamasis_tikrinimui);
+//      }
+//  }
 
-//   localStorage.setItem('favourite_movies', JSON.stringify(items));
 
-//   console.log(JSON.parse(localStorage.getItem('favourite_movies')))
+const movies_array = tikrina();
 
-  
-// console.log('favourite_movies')
+//console.log(tikrina());
+
+    const movie_from_file = getMovieFromFile(284054);
+    const new_movie = {
+        id: movie_from_file.id,
+        title: movie_from_file.title
+    }
+
+movies_array.push(new_movie);
+
+localStorage.setItem('favourite_movies', JSON.stringify(movies_array));
+
+
+//console.log(JSON.parse(localStorage.getItem('favourite_movies')))
+
+
+//set favourite movie
+const getMovieFromLocalStorage = () => {
+    const items = JSON.parse(localStorage.getItem('favourite_movies'))
+    items.map(item => console.log(item.title));
+}
+getMovieFromLocalStorage();
+
+//istrinti filma is local storage
+
+//1.get Item isiparsinti
+//2.find. ar yr toks movie pasalint
+//3.splice., kas ta 1 salinnt
+//4.set Item, stringifynauja masyva uzsetinu i local storage , awwor funmcion
+
+
+//window.localStorage.removeItem('Black Adam');
+
+
+
+const deleteMovie = (movieID) => {
+    const items = JSON.parse(localStorage.getItem('favourite_movies'))
+    const index = items.findIndex(movie => movie.id === movieID);
+        console.log(index)
+if(index > -1) {
+    items.splice(index, 1);
+}
+localStorage.setItem('favourite_movies', JSON.stringify(items))
+}
+deleteMovie(436270);
+//nd i konsole ispauzdinti visus saliu pavadinius, ar visur yra nuspoejama 
+//duomenu struktura, index kelintas nr, ir kas kiekviena sali bruksneliai
+//ir idet i index html salis ir veleveles jei galime
 
 
 //
