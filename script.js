@@ -1,7 +1,7 @@
 import result from "./data.js";
 
 import result from "./data.js";
-
+ ///salys su map
 
 const informacija_is_local_storage = localStorage
 //console.log(informacija_is_local_storage)
